@@ -8,7 +8,8 @@ export const signUp = async (req, res) => {
     email,
     password: await User.cifrarPassword(password),
   });
-  console.log(userNew);
+
+  await userNew.save();
 
   res.json("signUp");
 };
